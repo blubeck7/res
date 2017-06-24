@@ -1,0 +1,207 @@
+\documentclass[12pt]{article}
+
+%Make margins bigger
+%\addtolength{\oddsidemargin}{-.875in}
+%\addtolength{\evensidemargin}{-.875in}
+%\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+
+\linespread{1.3}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\title{Residential Rate Design Proposal}
+\author{Brian Lubeck}
+
+\begin{document}
+
+\maketitle
+
+%1. MAKE PROPOSAL 3 PAGES MAX
+%2. INCORPORATE INTO PROPOSAL BEST RATE FOR A RES CUSTOMER FROM A MENU OF OPTIONS
+%3. THEN TALK ABOUT THE COSTS FOR THE CUSTOMERS GROUPED BY BEST RATE
+%4. THEN ARGUE ABOUT DEADWEIGHT OF LOSS FROM BERKELEY PROPOSAL
+%5. PHASE 1 = RESIDENTIAL RATE OPTIMIZATION
+%6. PHASE 2 = RES BEHAVIORAL QUESTION (Given a menu of rate schedules from which to %choose, which rate schedule will a particular customer choose) -multiclassification %problem, logistic regression
+
+\subsubsection*{Introduction}
+
+In its prepared testimony for Phase I of the Residential Rate Reform OIR, PG\&E argues that its long-term residential rate design proposals will simplify rates and move residential customers much closer to their cost of service.\footnote{See pg. 2-2.} However, while PG\&E gives many arguments as to why this is true, what is absent is any quantification of the cost to serve individual customers and how closely PG\&E's rate proposals would actually charge individual customers their cost of service. PG\&E argues that a fixed charge is more appropriate to collect the costs for capacity-related investments for generation, transmission and distribution rather than volumetric rates because these costs do not change with the amount of electricity customers consume and, in the absence of a demand charge, a fixed charge is more appropriate than volumetric rates.\footnote{See pg. 2-7.} In actuality, as PG\&E notes, these capacity-related investments are driven by customers' coincident and non-coincident demands, which are correlated to some degree with usage. Thus, it is possible that volumetric rates rather than a fixed charge would charge customers closer to their cost of service for capacity services. 
+
+This study aims to compare different residential rate designs by quantifying how closely they charge individual customers their cost of service. In addition, this study will provide additional quantitative support at the customer level for the 2018 RDW application. Historically, PG\&E has not analyzed rates or subsidies at the customer level. Matching rates to costs is essential in order to send customers the right price signals, to avoid cost shifting among customers and to provide the correct monetary incentives for the development of new and current technologies.
+
+\subsubsection*{Problem to be Investigated}
+
+In D.15-07-001 of the Residential Rate Reform OIR, the Commission orders PG\&E to file an RDW application proposing default TOU rates and that the application includes the information as required by this decision to support the proposed rates and legal findings required by section 745(d) of the P.U.C.\footnote{See OP.9} More specifically, section 3 of this decision states 5 statutes with which rates must comply and 10 optimal rate design principles ordered by the Commission to be used to evaluate residential rate design changes.\footnote{See D.14-06-0294 OP.4. In this decision, the Commission orders that the following 10 rate design principles are used in the Residential Rate Reform OIR proceeding to evaluate residential rate design changes:	
+	
+\begin{enumerate}
+	\item Low-income and medical baseline customers should have access to enough electricity to ensure basic needs (such as health and comfort) are met at an affordable cost.
+	
+	\item Rates should be based on marginal cost.
+	
+	\item Rates should be based on cost-causation principles.
+	
+	\item Rates should encourage conservation and energy efficiency.
+	
+	\item Rates should encourage reduction of both coincident and non-coincident peak demand.
+	
+	\item Rates should be stable and understandable and provide customer choice.
+	
+	\item Rates should generally avoid cross-subsidies, unless the cross-subsidies appropriately support explicit state policy goals.
+	
+	\item Incentives should be explicit and transparent.
+	
+	\item Rates should encourage economically efficient decision-making.
+	
+	\item Transitions to new rate structures should emphasize customer education and outreach that enhances customer	understanding and acceptance of new rates, and minimizes and appropriately considers the bill impacts associated with such transitions.
+\end{enumerate}
+	
+} 
+In addition, this decision also states that "the legal obligation of the Commission is to establish just and reasonable rates to enable the utility to provide service that is adequate, safe and reliable for the convenience of the public," where traditionally, the phrase "just and reasonable rates" has been interpreted to mean rates that are based on cost of service.
+
+These 10 principles and the charge that rates "shall be just and reasonable," provide the guiding framework for designing residential rates. However, these objectives are sometimes in conflict with each other. For example, the principle that low income customers and medical baseline customers should have access to enough electricity to meet their basic needs at an affordable cost often times conflicts with cost of service. Thus, we see that rates are a balancing act between competing objectives. Based on these objectives, we wish to quantify to the extent possible the residential rate designs, subject to the constraints imposed by law and ordered in the Residential Rate Reform\footnote{Section 12.5 of this decision states at a minimum that the RDW application must include (1) results of required bill impact studies, including income/usage, GHG reduction, cost savings, (2) section 745(d) requirements, (3) TOU rate design to maximize customer acceptance, (4) load response studies, (5) alternative TOU tariff such as multiple TOU periods, matinee pricing, and seasonally differentiated TOU periods that are designed for advance customers.}, that are optimal at charging individual customers their cost of service.
+
+\subsubsection*{Study Methodology}
+
+The study will be ultimately formulated as a constrained optimization problem. The study will proceed in three phases to ensure completion of the deliverables and build acceptance of the results. Phase 1 will consist of implementing the basic calculations for
+\begin{itemize}
+\item cost of service by customer,
+\item current bill by customer based on a set of rates and recorded hourly loads and
+\item proposed rates, e.g. CARE discount, energy burden ratio (bill amount / income), tier ratios, minimum bill, customer charge, billing determinants for TOU and other rates.
+\end{itemize}
+Phase 2 will consist of taking the basic calculations from step 1 and applying an optimization framework to minimize the difference between customers' bills and individual cost of service. Phase 3 will consist of adding the constraints one-by-one to the optimization problem. The constraints will be formulated mathematically so that they can be added to the optimization problem. For example, the first constraint added could be that customers with a certain level of income cannot have a bill increase more than 5\%.  
+
+
+\subsubsection*{Audience and Benefits/Goals of this Study}
+
+The audience of this study are internal PG\&E stakeholders involved with rates and external stakeholders (intervenors, commissioners, etc.) that will be involved with the 2018 RDW application. In addition, the study could be potentially be used in the NEM 3.0 application.
+
+Some of the benefits and goals of this study are 
+
+\begin{enumerate}
+\item Explicitly quantify the subsidy among various groups of residential customers, most notably solar customers, and explictly measure how well various rate proposals recover costs.
+
+\item Unites the various analyses into a single, more comprehensive framework that better shows the tradeoffs among different rate designs in terms of cost of service, bill impacts, income, conservation and customer acceptance.
+
+\item Supports the Rate Architecture project. By more closely aligning rates with costs, will help to better understand how PG\&E should measure costs and the services it provides to customers. Also, this study aligns with the CTM metric currently used in the S1 planning process.
+
+\item Provide additional support for the 2018 RDW application beyond the qualitative arguments already provided.   
+\end{enumerate} 
+
+\subsubsection*{Required Data}
+
+This analysis will require many different sources of data. Marginal costs, hourly loads and EPMC scalars will be used to calculate the cost of service of individual customers. Rates and hourly loads will be used to calculate current bills. Income and climate data will be used to quantify how affordable rates and bills are for low income customers and customers in hot areas. Billing data will be used to analyze the relationship between conservation, rates and total bills. Load and billing data will come from Teradata. Climate data can come from www.noaa.gov or www.wunderground.com. Income data from Experian has been used in past PG\&E analyses.
+
+\subsubsection*{Deliverables and Timeline}
+
+Phase 1 will leverage the work done for the Demand Charge study in GRC Phase 2. Phase I will tentatively be completed by beginning of August. Phase 2 will tentatively be completed by mid September and Phase 3 will tentatively be completed by end of October. Deliverables for each phase will include a report, code and slide deck. 
+
+
+\pagebreak
+
+
+
+{\centering \Large \textbf{Residential Rate Design}:
+
+}
+{\centering \Large Optimization and Behavioral Impacts
+
+}
+
+
+\subsubsection*{Description of Technology or Strategy to Be Demonstrated}
+
+This study consists of several parts with each part building upon the previous part. At a high level, there are two main parts: an optimization of residential rates under a traditional pricing and costing framework and an investigation of how rates, income and other factors influence how a customer consumes electricity.
+
+\noindent PART ONE:
+
+In part one we create datasets at the customer-level. The datasets will consist of load information, such as FLT; socio-economic information, such as income; dwelling characteristics, such as heating type; and weather statistics, such as temperature that will be used to analyze the questions posed in this study. We then conduct an exploratory and graphical analysis of the data to look for any potential trends or relationships in the data. \newline
+
+\noindent PART TWO:
+
+Over time, certain rate design principles and precedents have been established in California by the law, the CPUC, utility companies and academia. These principles and precedents can and often conflict with each other. The result is a careful balancing act that residential rates must satisfy. We state and solve a mathematical optimization model that captures these principles and precedents. We state the objective function as follows:
+
+\begin{align*}
+\min_{r_1, r_2, \dots r_n} \sum_{i \in P} \left(\sum_{j = 1}^{N_i} bill_{ij} - cost_i \right)^2 + \lambda \sum_{i \in P} \sum_{j = 1}^{N_i} \frac{(bill_{ij} - \overline{bill_i})^2}{N_i}
+\end{align*}
+where $r_1, r_2, \dots, r_n$ are specific rates, $bill_{ij}$ is customer $i$'s bill in month $j$ and $\overline{bill_i}$ is customer $i$'s average bill and $cost_i$ is the customer's annual cost. A customer's cost can be either the customer's marginal cost revenue or full cost of service, which is calculated in the same manner as PG\&E calculates marginal cost revenue and full cost of service by class in the GRC Phase 2.
+
+The first term of the objective function measures the subsidy between customers' costs and bills. The second term measures the variance in customers' monthly bills. The constant $\lambda$ represents the weight given to each term.
+
+Now we add constraints. For example, let $r_1, r_2$ be tiered rates, $r_3, r_4$ be non-coincident and coincident demand charges, respectively, let $r_5$ be a customer charge and let $r_6$ be a minimum bill. Let $y_1, y_2, \dots, y_6$ be binary variables corresponding to the rates. Finally, let $L$ be the population of low-income customers, and let $H$ be the population of customers in hot climate zones. The constraints are as follows:  
+\begin{align}
+	r_1 \leq r_2 & \quad \mbox{(tier 1 rate $\leq$ tier 2 rate)} \\
+	y_3 + y_4 \geq 1 & \quad \mbox{(at least one demand charge)} \\
+	y_5 + y_6 = 1 & \quad \mbox{(customer charge or min bill but not both)}\\
+	\sum_{i \in L} \frac{bill_i}{income_i} \leq |L| \cdot (0.1) & \quad \mbox{(average energy burden $\leq$ 10\% - low-income)} \\
+	\sum_{i \in H} \frac{bill_i}{income_i} \leq |H| \cdot (0.1) & \quad \mbox{(average energy burden $\leq$ 20\% - hot areas)} \\
+	r_i \geq 0, i = 1, \dots, n		
+\end{align}
+
+\noindent PART THREE:
+
+In this part, we explore new billing determinants, rates and customer segments. The aim is to find a simple way to define groups of customers with homogeneous costs (or load characteristics) and billing determinants and rates that accurately reflect the costs of each group. We will use various clustering and classification algorithms, such as $k$-means, agglomerative techniques or random forests to segment customers. \newline
+
+\noindent PART FOUR:
+
+In this part, we explore the effects that rates and other factors have on customers' usage patterns. We ask the following questions:
+\begin{enumerate}
+	\item How do we predict how much energy a customer will use next month?
+	\item How will different rates and rate design influence a customer's non-coincident and coincident peak demands?
+	\item How will changing rates affect a customer's monthly usage?
+	\item What is the probability a customer will switch to a different rate schedule based on bill savings?
+\end{enumerate}
+
+We will utilize machine learning algorithms such as various types of neural networks to investigate these questions.
+
+\subsubsection*{Concern, Gap, or Problem to Be Addressed}
+
+As the penetration of distributed energy resources (DERs) grows, in particular residential solar generation systems, there is opportunity to expand on current rate design practices to match residential rates with costs while balancing other important considerations such as ensuring low-income customers can afford their reasonable energy needs. PG\&E's currently used rate design models provide limited flexibility to experiment with new rate designs and additional considerations besides costs. This study will improve our understanding of the relationships among rates, DERs, customer protections and customers' usage patterns. If proven successful, this study will influence regulators and law-makers thinking about residential rates and DERs.
+
+\subsubsection*{Potential Benefits at Full Deployment}
+\begin{enumerate}
+\item Strong quantitative support for rate filings.
+\item Additional justification for a fixed charge, minimum bill, demand charges, TOU rates or other non-volumetric rates.
+\item Insights into how customers usage patterns are influenced by rates, income, weather and other factors.
+\item Guidance as to how laws and regulations should be written.
+\end{enumerate}
+
+\subsubsection*{Reason Proposal Should Be Considered Immediately}
+
+Historically, PG\&E has not analyzed rates or subsidies at the customer level. Matching rates to costs at the customer level is essential in order to send each customer the right price signals, to avoid cost shifting among customers and to provide the correct monetary incentives for the development of new and current technologies that will benefit stakeholders.
+
+\subsubsection*{Data Requirements}
+To answer the questions and aims posed in this study above requires the aggregation of different types of data. Specifically, we create two large datasets. The first dataset will be used to perform the optimization in part two and the second dataset will be used to investigate the questions posed in part four. \newline
+
+\noindent \textbf{Dataset 1:}
+
+Description: Each row in the dataset represents a customer. Three years of customer data is used to match rates with costs.
+
+Required Fields:
+\begin{enumerate}
+	\item Load Characteristics - FLT, Dist PCAF, Trans PCAF, Gen PCAF, Customer-Months
+	\item Marginal Costs - MCAC, MDCC, MTCC, MEC, MGCC
+	\item Customer Information - Billing Determinants, Income, Geographic Identifiers (Zip Code, Climate Zone, County, etc.)
+\end{enumerate}
+
+\noindent \textbf{Dataset 2:}
+
+Description: Dataset two is an aggregation of various different of sources. Data will be accumulated for as many years and customers as possible to understand behavioral changes overtime.
+
+Potential fields:
+\begin{enumerate}
+	\item Customer Characteristics - customer id, monthly bill amounts, credit score, etc.
+	\item Usage Characteristics - monthly peak demand, total monthly kwh, previous monthly kwh, etc.
+	\item Historical Rates
+	\item Weather Data - temperature, rainfall, surface water availability, etc.
+	\item Dwelling Characteristics -type of space heating, type of water heating, air conditioning, pool, spa, square footage, etc.
+	\item Socio-economic Characteristics - household income, number of household occupants, presence of teenagers, etc.
+\end{enumerate}
+
+\end{document}
